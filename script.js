@@ -1,9 +1,5 @@
-function random(num) {
-    return Math.floor(Math.random() * num + 1);
-}
-
 async function retrieveCharacter() {
-    const randomId = random(826);
+    const randomId = Math.floor(Math.random() * 826 + 1);
     try {
         const response = await fetch(`https://rickandmortyapi.com/api/character/${randomId}`); // look at the pages issue ✅
         const json = await response.json();
@@ -22,8 +18,7 @@ let qwert;
 async function display() {
     
     qwert = await retrieveCharacter();
-    console.log(qwert);
-    // console.log(retrieveCharacter().image, json.name, json.species, json.status);
+    // console.log(qwert);
     updateDivs();
 }
 
