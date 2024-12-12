@@ -11,25 +11,23 @@ async function retrieveCharacter() {
     }
 }
 
-let qwert;
-
-async function display() {
+async function displayCharacter() {
     
-    qwert = await retrieveCharacter();
+    const characterInfo = await retrieveCharacter();
 
     const img     = document.getElementById("img");
     const name    = document.getElementById("name");
     const species = document.getElementById("species");
     const status  = document.getElementById("status");
     
-    img.src = qwert.image;
-    name.textContent = qwert.name;
-    species.textContent = qwert.species;
-    status.textContent = qwert.status;
+    img.src             = characterInfo.image;
+    name.textContent    = characterInfo.name;
+    species.textContent = characterInfo.species;
+    status.textContent  = characterInfo.status;
 }
 
-// display();
+// displayCharacter();
 
 const btn = document.getElementById("btn");
-btn.addEventListener("click", (retrieveCharacter, display));
-// btn.addEventListener("click", display);
+btn.addEventListener("click", (retrieveCharacter, displayCharacter));
+// btn.addEventListener("click", displayCharacter);
