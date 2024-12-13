@@ -1,3 +1,19 @@
+// plan 
+// MVP1 
+// select API to use (Rick & Morty Characters) ✅
+// test API, verify and confirm data matches what we need ✅
+// sketch basic HTML UI and identify which data to display ✅
+// create fetch request async function ✅
+// create DOM elements to display data ✅
+// add error handling ✅
+// is data being presented and readable? ✅
+// check if runs in different browsers (tested in chrome and safari) ✅ 
+// MVP 2
+// create 'player cards'
+// neaten CSS
+// MVP 3
+// add 'search character' compatability - need to insert a search box
+
 async function retrieveCharacter() {
     const randomId = Math.floor(Math.random() * 826 + 1);
     try {
@@ -5,29 +21,28 @@ async function retrieveCharacter() {
         const json = await response.json();
         console.log(json);
         return json;
-    }
-    catch (error) {
-        console.error("error: ", error);
+    } catch (error) {
+        console.error("Error: unable to find character. ", error);
     }
 }
-
 async function displayCharacter() {
-    
     const characterInfo = await retrieveCharacter();
+    document.getElementById("img").src = characterInfo.image;
+    document.getElementById("name").textContent = "Name: " + characterInfo.name;
+    document.getElementById("species").textContent = "Species: " + characterInfo.species;
+    document.getElementById("gender").textContent = "Gender: " + characterInfo.gender;
+    document.getElementById("status").textContent = "Status: " + characterInfo.status;
+    document.getElementById("location").textContent = "Location: " + characterInfo.location.name;
+    document.getElementById("origin").textContent = "Origin: " + characterInfo.origin.name;
+}
+const btn = document.getElementById("btn");
+btn.addEventListener("click", (displayCharacter));
 
-    const img     = document.getElementById("img");
-    const name    = document.getElementById("name");
-    const species = document.getElementById("species");
-    const status  = document.getElementById("status");
-    
-    img.src             = characterInfo.image;
-    name.textContent    = characterInfo.name;
-    species.textContent = characterInfo.species;
-    status.textContent  = characterInfo.status;
+/* const imgPlaceholder = document.getElementById("imgPlaceholder");
+
+function hidePlaceholder() {
+    imgPlaceholder.style.opacity = 0;
 }
 
-// displayCharacter();
+btn.addEventListener("click", hidePlaceholder); */
 
-const btn = document.getElementById("btn");
-btn.addEventListener("click", (retrieveCharacter, displayCharacter));
-// btn.addEventListener("click", displayCharacter);
