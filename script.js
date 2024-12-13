@@ -8,19 +8,19 @@
 // create DOM elements to display data ✅
 // add error handling ✅
 // is data being presented and readable? ✅
-// check if runs in different browsers (tested in chrome and safari) ✅ 
+// check if runs in different browsers ✅ (tested in chrome, edge and safari) 
 
 // MVP 2
 // create 'player cards' ✅
 // neaten CSS ✅
 
 // MVP 3
-// add 'search character' compatability - need to insert a search box
+// add 'search character' compatibility - need to insert a search box
 
 async function retrieveCharacter() {
     const randomId = Math.floor(Math.random() * 826 + 1);
     try {
-        const response = await fetch(`https://rickandmortyapi.com/api/character/${randomId}`);      // look at the pages issue ✅
+        const response = await fetch(`https://rickandmortyapi.com/api/character/${randomId}`);  // look at the pages issue ✅
         const json = await response.json();
         console.log(json);
         return json;
@@ -31,10 +31,12 @@ async function retrieveCharacter() {
 
 async function displayCharacter() {
     const characterInfo = await retrieveCharacter();
+    
     let statusIcon = "";
     if (characterInfo.status === "Alive")   { statusIcon = "🟢"; }
     if (characterInfo.status === "Dead")    { statusIcon = "🔴"; }
     if (characterInfo.status === "unknown") { statusIcon = "⚫"; }
+    
     document.getElementById("img").src              = characterInfo.image;
     document.getElementById("name").textContent     = characterInfo.name;
     document.getElementById("species").textContent  = "Species: " + characterInfo.species;
