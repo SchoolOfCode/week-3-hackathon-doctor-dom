@@ -1,3 +1,103 @@
 body {
-    background-color: bisque;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: rgb(47, 79, 79);
+    background-color: rgb(255, 233, 206);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+/* for testing div positions
+div {
+    border: 1px solid red;
+}
+*/
+
+h1,
+#card {
+    display: flex;
+    flex-flow: row nowrap;
+    /* align-items: stretch; */
+    background-color: rgb(219, 202, 126);
+    border: 12px solid rgb(155, 167, 114);
+    border-radius: 25px;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* #profile-photo,
+#profile-info {
+    margin: 10px;
+} */
+
+#profile-photo,
+#profile-info,
+#img {
+    width: 300px;
+    height: 300px;
+}
+
+#profile-photo,
+#img,
+#profile-info {
+    border-radius: 20px;
+}
+
+#profile-info {
+    box-sizing: border-box;
+    /* justify-content: space-between; */
+    padding: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: rgb(221, 210, 162);
+}
+
+.li {
+    margin: 5px 0;
+}
+
+#name{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.subhead {
+    display: flex;
+    /* justify-content: space-between; */
+    /* flex-flow: row nowrap; */
+}
+
+#species,
+#status {
+    flex-basis: 50%;
+}
+
+#button-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+button {
+    padding: 16px;
+    background-color: rgb(228, 184, 90);
+    color: rgb(47, 79, 79);
+    font-size: 24px;
+    letter-spacing: 2px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 6px 0 0 rgb(132, 158, 173);
+}
+
+button:hover {
+    background-color: rgb(211, 170, 83);
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 0 rgb(80, 102, 107);
 }

@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick & Morty characters</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons8-rick-sanchez-ios-17-filled-32.png" type="image/x-icon">
 </head>
 <body>
     <h1>Rick & Morty characters</h1>
-    <div id="container">
-        <img id="img" src="" alt="character photo">
-        <div id="name"></div>
-        <div id="species"></div>
-        <div id="status"></div>
+    <div id="card">
+        <div id="profile-photo">
+            <img id="img" src="front.png" alt="character photo">
+        </div>
+        <div id="profile-info">
+            <div class="li" id="name"></div>
+            <div class="li subhead">
+                <div id="status"></div>
+                <div id="species"></div>
+            </div>
+        </div>
     </div>
-    <button id="btn">Generate randon character</button>
+    <div id="button-div">
+        <button id="btn">Generate random character</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
