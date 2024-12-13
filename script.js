@@ -36,7 +36,7 @@ async function displayCharacter() {
     document.getElementById("origin").textContent = "Origin: " + characterInfo.origin.name;
 }
 const btn = document.getElementById("btn");
-btn.addEventListener("click", (retrieveCharacter, displayCharacter));
+btn.addEventListener("click", (displayCharacter));
 
 /* const imgPlaceholder = document.getElementById("imgPlaceholder");
 
