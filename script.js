@@ -9,10 +9,10 @@
 // is data being presented and readable? ✅
 // check if runs in different browsers (tested in chrome and safari) ✅ 
 // MVP 2
-// create 'player cards'
-// neaten CSS
+// create 'player cards' ✅
+// neaten CSS ✅
 // MVP 3
-// add 'search character' compatability - need to insert a search box
+// add 'search character' compatability - need to insert a search box ✅
 
 async function retrieveCharacter() {
     const randomId = Math.floor(Math.random() * 826 + 1);
@@ -31,7 +31,11 @@ async function displayCharacter() {
     document.getElementById("name").textContent = "Name: " + characterInfo.name;
     document.getElementById("species").textContent = "Species: " + characterInfo.species;
     document.getElementById("gender").textContent = "Gender: " + characterInfo.gender;
-    document.getElementById("status").textContent = "Status: " + characterInfo.status;
+    let statusIcon = "";
+    if (characterInfo.status === "Alive")   { statusIcon = "🟢"; }
+    if (characterInfo.status === "Dead")    { statusIcon = "🔴"; }
+    if (characterInfo.status === "unknown") { statusIcon = "⚫"; }
+    document.getElementById("status").textContent = `Status: ${statusIcon} ` + characterInfo.status;
     document.getElementById("location").textContent = "Location: " + characterInfo.location.name;
     document.getElementById("origin").textContent = "Origin: " + characterInfo.origin.name;
 }

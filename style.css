@@ -64,16 +64,17 @@ h1,
     font-weight: 800;
 }
 
-.subhead {
+/* .subhead {
     display: flex;
-    /* justify-content: space-between; */
-    /* flex-flow: row nowrap; */
-}
+    gap: 10px;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+} */
 
-#species,
+/* #species,
 #status {
     flex-basis: 50%;
-}
+} */
 
 #button-div {
     display: flex;
